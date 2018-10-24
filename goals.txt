@@ -1,0 +1,6 @@
+Stage 1: attendance import and export names (csv-web-csv)
+Stage 2: randomize name and export
+Stage 3: save user data - database, authentication (id/pw)
+Stage 4: online dashboard - course add/delete, attended student count, calendar
+Stage 5: put some ads on and take it online
+Stage 6: allow other web builders to access and use our tool as a build-in
