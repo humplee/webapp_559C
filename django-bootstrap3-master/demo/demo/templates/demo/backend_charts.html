@@ -1,5 +1,23 @@
+{% extends 'demo/base.html' %}
+{% load bootstrap3 %}
 {% load static %} 
+{% block title %}
 
+Candidate A
+
+    
+    
+{% endblock %}
+{% block content %}
+
+
+<div class="col-md-2"><img src="../../static/demo/bremner-hector-mayor-candidate-2018.png"  alt="bremner-hector-mayor-candidate-2018" />
+</div>
+<div class="col-md-3">
+        <a > </a>
+        <p ></p>
+        <p >Twitter: </p>
+</div>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,17 +25,19 @@
     <!-- 引入 ECharts 文件 使用 static 关键字-->
     
     <script src="{% static '/demo/echarts.js' %}"></script>
+    <script src="{% static '/demo/wordCloud.js' %}"></script>
 
 </head>
 </html>
 <body>
     <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
-    <div id="main" style="width:1280px;height:850px;"></div>
+    <div id="main" style="width:500px;height:500px;"></div>
+    <div id="main2" style="width:500px;height:500px;"></div>
     <script type="text/javascript">
 
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('main'));
-
+        var myChart2 = echarts.init(document.getElementById('main2'));
         // 指定图表的配置项和数据
         var option = {
                 title: {
@@ -69,7 +89,73 @@
                 ]
 };
         
+
+
+option2 = {
+    title: {
+        text: 'Google Trends',
+        link: 'http://www.google.com/trends/hottrends'
+    },
+    tooltip: {
+        show: true
+    },
+    series: [{
+        name: 'Google Trends',
+        type: 'wordCloud',
+        size: ['80%', '80%'],
+        textRotation : [0, 45, 90, -45],
+        textPadding: 0,
+        autoSize: {
+            enable: true,
+            minSize: 14
+        },
+        data: [
+            {
+                name: "Sam S Club",
+                value: 10000,
+                itemStyle: {
+                    normal: {
+                        color: 'black'
+                    }
+                }
+            },
+            {
+                name: "Macys",
+                value: 6181,
+                
+            },
+            {
+                name: "Amy Schumer",
+                value: 4386,
+                
+            },
+            {
+                name: "Jurassic World",
+                value: 4055,
+                
+            },
+            {
+                name: "Charter Communications",
+                value: 2467,
+                
+            },
+            {
+                name: "Chick Fil A",
+                value: 2244,
+                
+            },
+            {
+                name: "Planet Fitness",
+                value: 1898,
+                
+            },
+            
+        ]
+    }]
+};
         // 使用刚指定的配置项和数据显示图表
         myChart.setOption(option);
+        myChart2.setOption(option2);
     </script>
 </body>
+{% endblock %}
