@@ -4,11 +4,26 @@
 
 {% block bootstrap3_content %}
     <div class="col-md-2">
-            <ul class="nav nav-stacked">
-                    <li role="presentation" class="active"><a href="{% url 'home' %}">Bob</a></li>
-                    <li role="presentation"><a href="{% url 'backend_charts' %}">Alice</a></li>
-                    <li role="presentation"><a href="{% url 'backend_charts' %}">Charlie</a></li>
-                  </ul>
+            
+        <div class="row" style="height: 100px;">
+            
+                
+        </div>
+        
+                <div class="col">
+                        <div class="panel panel-default">
+                                <div class="panel-body">
+                                        <ul class="nav nav-stacked">
+                                                <li role="presentation" class="active"><a href="{% url 'home' %}">Bob</a></li>
+                                                <li role="presentation"><a href="{% url 'backend_charts' %}">Alice</a></li>
+                                                <li role="presentation"><a href="{% url 'backend_charts' %}">Charlie</a></li>
+                                        </ul>
+                                </div>
+                              </div>
+                        
+                </div>
+        
+            
         
     </div>
     
