@@ -9,15 +9,32 @@ Candidate A
     
 {% endblock %}
 {% block content %}
+<div class="container">
+    <div class="col-md-2">
+        
+            <div class="panel panel-default">
+                <div class="panel-body">
+                        <ul class="nav nav-stacked">
+                                <li role="presentation" class="active"><a href="{% url 'backend_charts' %}">Bob</a></li>
+                                <li role="presentation"><a href="{% url 'backend_charts' %}">Alice</a></li>
+                                <li role="presentation"><a href="{% url 'backend_charts' %}">Charlie</a></li>
+                        </ul>
+                </div>
+            </div>
+    </div>
+        
 
 
-<div class="col-md-2"><img src="../../static/demo/bremner-hector-mayor-candidate-2018.png"  alt="bremner-hector-mayor-candidate-2018" />
-</div>
-<div class="col-md-3">
-        <a > </a>
+    <div class="col-md-8">
+        <div class="col-md-5">
+            <img src="../../static/demo/bremner-hector-mayor-candidate-2018.png"  alt="bremner-hector-mayor-candidate-2018" />
+        </div>
+        <div class="col-md-3">
+            <a > </a>
         <p ></p>
         <p >Twitter: </p>
-</div>
+    </div>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -165,4 +182,7 @@ Candidate A
         
     </script>
 </body>
+</div>
+</div>
+</div>
 {% endblock %}
