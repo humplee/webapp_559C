@@ -47,16 +47,16 @@ Candidate A
 </head>
 </html>
 <body>
-    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
-    <div id="main" style="width:500px;height:500px;"></div>
-    <div id="main" style="width:500px;height:500px;">
+    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM 
+    <div id="main" style="width:1000px;height:1000px;"></div>-->
+    
         <canvas id="canvas" width="500px" height="500px"></canvas>
     </div>
     
     <script type="text/javascript">
 
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('main'));
+        //var myChart = echarts.init(document.getElementById('main'));
         
         // 指定图表的配置项和数据
         var option = {
@@ -162,7 +162,7 @@ Candidate A
     var options = eval({
             "list": wordFreqData,//或者[['各位观众',45],['词云', 21],['来啦!!!',13]],只要格式满足这样都可以
             "gridSize": 6, // 密集程度 数字越小越密集
-            "weightFactor": 1, // 字体大小=原始大小*weightFactor
+            "weightFactor": 3, // 字体大小=原始大小*weightFactor
             "maxFontSize": 60, //最大字号
             "minFontSize": 14, //最小字号
             "fontWeight": 'normal', //字体粗细
@@ -178,7 +178,7 @@ Candidate A
 
 
         // 使用刚指定的配置项和数据显示图表
-        myChart.setOption(option);
+       // myChart.setOption(option);
         
     </script>
 </body>
