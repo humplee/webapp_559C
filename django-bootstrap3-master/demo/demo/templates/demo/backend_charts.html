@@ -30,7 +30,7 @@
 
     <div class="col-md-10">
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-8">
                     <div class="panel panel-default">
 
                             <div class="panel-body">
@@ -38,7 +38,8 @@
                                     <img src="../../static/demo/bremner-hector-mayor-candidate-2018.png"  alt="bremner-hector-mayor-candidate-2018" />
                                 </div>
                                 <div class="col-md-5">
-                                        <h1>Candidate A <small>Twitter:</small></h1> 
+                                        <h1>Candidate A </h1> 
+                                        <h3>Twitter</h3>
                                 </div>
                                  
                             </div>
@@ -46,18 +47,29 @@
             </div>
             
         </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
+                    <div class="panel panel-default">
+
+                            <div class="panel-body">
+                                    <div id="main" style="width: 500px;height:500px;">
+                
+                                    </div>
+                                 
+                            </div>
+                    </div>
+                
                     <div id="main" style="width: 500px;height:500px;">
                 
                         </div>
                     
             </div>
             <div class="col-md-4">
-                    <canvas id="canvas" width="500px"height="500px">
+                    <div class="panel panel-default">
+                    <canvas id="canvas" width="470px"height="500px">
             
                         </canvas>
                         
-                    
+                    </div>
                         
                         
              </div>
@@ -103,11 +115,11 @@
     legend: {
         orient: 'vertical',
         x: 'left',
-        data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+        data:['A','B','C','D','E']
     },
     series: [
         {
-            name:'访问来源',
+            name:'SRC',
             type:'pie',
             radius: ['50%', '70%'],
             avoidLabelOverlap: false,
@@ -130,11 +142,11 @@
                 }
             },
             data:[
-                {value:335, name:'直接访问'},
-                {value:310, name:'邮件营销'},
-                {value:234, name:'联盟广告'},
-                {value:135, name:'视频广告'},
-                {value:1548, name:'搜索引擎'}
+                {value:335, name:'A'},
+                {value:310, name:'B'},
+                {value:234, name:'C'},
+                {value:135, name:'D'},
+                {value:1548, name:'E'}
             ]
         }
     ]
