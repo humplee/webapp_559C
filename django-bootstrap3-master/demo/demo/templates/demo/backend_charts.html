@@ -3,37 +3,73 @@
 {% load static %} 
 {% block title %}
 
-Candidate A
 
-    
+
     
 {% endblock %}
 {% block content %}
-<div class="container">
-    <div class="col-md-2">
+<div class="col-lg-2">
         
-            <div class="panel panel-default">
-                <div class="panel-body">
-                        <ul class="nav nav-stacked">
-                                <li role="presentation" class="active"><a href="{% url 'backend_charts' %}">Bob</a></li>
-                                <li role="presentation"><a href="{% url 'backend_charts' %}">Alice</a></li>
-                                <li role="presentation"><a href="{% url 'backend_charts' %}">Charlie</a></li>
-                        </ul>
-                </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                    <ul class="nav nav-stacked">
+                            <li role="presentation" class="active"><a href="{% url 'backend_charts' %}">Bob</a></li>
+                            <li role="presentation"><a href="{% url 'backend_charts' %}">Alice</a></li>
+                           
+                            <li role="presentation"><a href="{% url 'backend_charts' %}">Charlie</a></li>
+
+                    </ul>
             </div>
-    </div>
-        
-
-
-    <div class="col-md-8">
-        <div class="col-md-5">
-            <img src="../../static/demo/bremner-hector-mayor-candidate-2018.png"  alt="bremner-hector-mayor-candidate-2018" />
         </div>
-        <div class="col-md-3">
-            <a > </a>
-        <p ></p>
-        <p >Twitter: </p>
+        
+</div>
+
+    
+        
+    
+
+    <div class="col-md-10">
+        <div class="row">
+            <div class="col-md-5">
+                    <div class="panel panel-default">
+
+                            <div class="panel-body">
+                                <div class="col-md-3">
+                                    <img src="../../static/demo/bremner-hector-mayor-candidate-2018.png"  alt="bremner-hector-mayor-candidate-2018" />
+                                </div>
+                                <div class="col-md-5">
+                                        <h1>Candidate A <small>Twitter:</small></h1> 
+                                </div>
+                                 
+                            </div>
+                    </div>
+            </div>
+            
+        </div>
+            <div class="col-md-6">
+                    <div id="main" style="width: 500px;height:500px;">
+                
+                        </div>
+                    
+            </div>
+            <div class="col-md-4">
+                    <canvas id="canvas" width="500px"height="500px">
+            
+                        </canvas>
+                        
+                    
+                        
+                        
+             </div>
+    
+            
+           
+            
     </div>
+
+
+    
+
 
 <!DOCTYPE html>
 <html>
@@ -47,68 +83,64 @@ Candidate A
 </head>
 </html>
 <body>
-    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM 
-    <div id="main" style="width:1000px;height:1000px;"></div>-->
     
-        <canvas id="canvas" width="500px" height="500px"></canvas>
-    </div>
+    
+        
+    
+
     
     <script type="text/javascript">
 
         // 基于准备好的dom，初始化echarts实例
-        //var myChart = echarts.init(document.getElementById('main'));
+        var myChart = echarts.init(document.getElementById('main'));
         
         // 指定图表的配置项和数据
         var option = {
-                title: {
-                    text: 'Step Line'
+    tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b}: {c} ({d}%)"
+    },
+    legend: {
+        orient: 'vertical',
+        x: 'left',
+        data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+    },
+    series: [
+        {
+            name:'访问来源',
+            type:'pie',
+            radius: ['50%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+                normal: {
+                    show: false,
+                    position: 'center'
                 },
-                tooltip: {
-                    trigger: 'axis'
-                },
-                legend: {
-                    data:['Step Start', 'Step Middle', 'Step End']
-                },
-                grid: {
-                    left: '3%',
-                    right: '4%',
-                    bottom: '3%',
-                    containLabel: true
-                },
-                toolbox: {
-                    feature: {
-                        saveAsImage: {}
+                emphasis: {
+                    show: true,
+                    textStyle: {
+                        fontSize: '30',
+                        fontWeight: 'bold'
                     }
-                },
-                xAxis: {
-                    type: 'category',
-                    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-                },
-                yAxis: {
-                    type: 'value'
-                },
-                series: [
-                    {
-                        name:'Step Start',
-                        type:'line',
-                        step: 'start',
-                        data:[120, 132, 101, 134, 90, 230, 210]
-                    },
-                    {
-                        name:'Step Middle',
-                        type:'line',
-                        step: 'middle',
-                        data:[220, 282, 201, 234, 290, 430, 410]
-                    },
-                    {
-                        name:'Step End',
-                        type:'line',
-                        step: 'end',
-                        data:[450, 432, 401, 454, 590, 530, 510]
-                    }
-                ]
+                }
+            },
+            labelLine: {
+                normal: {
+                    show: false
+                }
+            },
+            data:[
+                {value:335, name:'直接访问'},
+                {value:310, name:'邮件营销'},
+                {value:234, name:'联盟广告'},
+                {value:135, name:'视频广告'},
+                {value:1548, name:'搜索引擎'}
+            ]
+        }
+    ]
 };
-    var wordFreqData = [['provancouverhq',60],
+    var wordFreqData = [
+['provancouverhq',40],
 ['mtnbvan',32],
 ['vanpoli',28],
 ['vanre',26],
@@ -163,7 +195,7 @@ Candidate A
             "list": wordFreqData,//或者[['各位观众',45],['词云', 21],['来啦!!!',13]],只要格式满足这样都可以
             "gridSize": 6, // 密集程度 数字越小越密集
             "weightFactor": 3, // 字体大小=原始大小*weightFactor
-            "maxFontSize": 60, //最大字号
+            "maxFontSize": 200, //最大字号
             "minFontSize": 14, //最小字号
             "fontWeight": 'normal', //字体粗细
             "fontFamily": 'Times, serif', // 字体
@@ -178,11 +210,9 @@ Candidate A
 
 
         // 使用刚指定的配置项和数据显示图表
-       // myChart.setOption(option);
+        myChart.setOption(option);
         
     </script>
 </body>
-</div>
-</div>
-</div>
+
 {% endblock %}

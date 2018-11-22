@@ -33,6 +33,9 @@ class DefaultFormsetView(FormView):
     template_name = "demo/formset.html"
     form_class = ContactFormSet
 
+class DefaultTopicsView(FormView):
+    template_name = "demo/topics.html"
+    form_class = ContactFormSet
 
 class DefaultFormView(FormView):
     template_name = "demo/form.html"

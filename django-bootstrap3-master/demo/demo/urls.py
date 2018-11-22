@@ -13,12 +13,14 @@ from .views import (
     MiscView,
     DefaultFormsetView,
     DefaultFormByFieldView,
-    BackendEChartsTemplate
+    BackendEChartsTemplate,
+    DefaultTopicsView
 )
 
 urlpatterns = [
     url(r"^$", HomePageView.as_view(), name="home"),
     url(r"^formset$", DefaultFormsetView.as_view(), name="formset_default"),
+    url(r"^topics$", DefaultTopicsView.as_view(), name="topics"),
     url(r"^form$", DefaultFormView.as_view(), name="form_default"),
     url(r"^form_by_field$", DefaultFormByFieldView.as_view(), name="form_by_field"),
     url(r"^form_horizontal$", FormHorizontalView.as_view(), name="form_horizontal"),

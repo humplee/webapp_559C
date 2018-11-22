@@ -3,7 +3,7 @@
 {% load bootstrap3 %}
 
 {% block bootstrap3_content %}
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -58,34 +58,33 @@
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
-    <div class="col-md-2">
+
+    
             
-        <div class="row" style="height: 100px;">
+        
             
                 
         
     
-    <div class="col-md-4">
-    <div class="container">
+    
+    
         <h1>{% block title %}(no title){% endblock %}</h1>
-        <div class="col">
-            
-        </div>
-        <div class="col">
-        {% autoescape off %}{% bootstrap_messages %}{% endautoescape %}
+        
+        
         {% block main_content %}
         {% endblock %}
         {% block content %}{% endblock %}
         {% block include_script %}
+        {% endblock %}
+        {% endblock %}
+        {% block extra_script %}
+        {% endblock %}
+        {% block static %}
+        {% endblock %}
     <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-{% endblock %}
-{% endblock %}
-{% block extra_script %}
-{% endblock %}
-{% block static %}
-{% endblock %}
-        </div>
-    </div>
+
         
-    </div>
+    
+        
+    
