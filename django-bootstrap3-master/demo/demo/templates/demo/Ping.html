@@ -13,20 +13,21 @@
         <div class="panel panel-default">
             <div class="panel-body">
                     <ul class="nav nav-stacked">
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Maynard Aubichon</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Hector Bremner</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Golok Z Buday</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Ping Chan</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">David Chen</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Mike Hansen</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Fred Harding</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Angela Dawson</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Satie Shottha</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Ken Sim</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Kenny Stewart</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Shauna Sylvester</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">John Yano</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Wai Young</a></li>    
+                            <li role="presentation"><a href="{% url 'backend_charts' %}">HOME</a></li>   
+                            <li role="presentation"><a href="{% url 'Maynard' %}">Maynard Aubichon</a></li>
+                            <li role="presentation"><a href="{% url 'Hector' %}">Hector Bremner</a></li>
+                            <li role="presentation"><a href="{% url 'Golok' %}">Golok Z Buday</a></li>
+                            <li role="presentation"><a href="{% url 'Ping' %}">Ping Chan</a></li>
+                            <li role="presentation"><a href="{% url 'David' %}">David Chen</a></li>
+                            <li role="presentation"><a href="{% url 'Mike' %}">Mike Hansen</a></li>
+                            <li role="presentation"><a href="{% url 'Fred' %}">Fred Harding</a></li>
+                            <li role="presentation"><a href="{% url 'Angel' %}">Angela Dawson</a></li>
+                            <li role="presentation"><a href="{% url 'Satie' %}">Satie Shottha</a></li>
+                            <li role="presentation"><a href="{% url 'Ken' %}">Ken Sim</a></li>
+                            <li role="presentation"><a href="{% url 'Kenny' %}">Kenny Stewart</a></li>
+                            <li role="presentation"><a href="{% url 'Shauna' %}">Shauna Sylvester</a></li>
+                            <li role="presentation"><a href="{% url 'John' %}">John Yano</a></li>
+                            <li role="presentation"><a href="{% url 'Wai' %}">Wai Young</a></li>    
 
                     </ul>
             </div>
@@ -45,11 +46,11 @@
 
                             <div class="panel-body">
                                 <div class="col-md-3">
-                                    <img src="../../static/demo/bremner-hector-mayor-candidate-2018.png"  alt="bremner-hector-mayor-candidate-2018" />
+                                    <img src="../../static/demo/chan-ping-mayor-candidate-2018.png"  alt="bremner-hector-mayor-candidate-2018" />
                                 </div>
                                 <div class="col-md-5">
-                                        <h1>Candidate B </h1> 
-                                        <h3>Twitter</h3>
+                                        <h1>Ping Chan </h1> 
+                                        <h3>Twitter@ drpingchan</h3>
                                 </div>
                                  
                             </div>
@@ -108,7 +109,7 @@
     
     
         
-    
+        
 
     
     <script type="text/javascript">
@@ -122,14 +123,10 @@
         trigger: 'item',
         formatter: "{a} <br/>{b}: {c} ({d}%)"
     },
-    legend: {
-        orient: 'vertical',
-        x: 'left',
-        data:['A','B','C','D','E']
-    },
+    
     series: [
         {
-            name:'SRC',
+            name:'Ping',
             type:'pie',
             radius: ['50%', '70%'],
             avoidLabelOverlap: false,
@@ -141,7 +138,7 @@
                 emphasis: {
                     show: true,
                     textStyle: {
-                        fontSize: '30',
+                        fontSize: '18',
                         fontWeight: 'bold'
                     }
                 }
@@ -152,62 +149,40 @@
                 }
             },
             data:[
-                {value:335, name:'A'},
-                {value:310, name:'B'},
-                {value:234, name:'C'},
-                {value:135, name:'D'},
-                {value:1548, name:'E'}
+                
+            {value:12, name:'Social housing solutions'},
+{value:26, name:'Community safety and life'},
+{value:6, name:'New St Paul Hospital fast'},
+{value:36, name:'Others'},
+
             ]
         }
     ]
 };
-    var wordFreqData = [
-['provancouverhq',40],
-['mtnbvan',32],
-['vanpoli',28],
-['vanre',26],
-['people',18],
-['agree',14],
-['schtaunkhauser',14],
-['brettdrc',13],
-['mrdruthers',13],
-['rohanarezel',13],
-['strategyrick',10],
-['jhwfung',10],
-['like',10],
-['razamirza',9],
-['cosmicsans',9],
-['mrsbrg',8],
-['thanks',8],
-['vanelxn',7],
-['ronpolly',7],
-['jakking',7],
-['city',7],
-['fivre',7],
-['don',7],
-['pqpolitics',7],
-['thank',7],
-['housing',7],
-['kennedystewart',7],
-['think',6],
-['agree',6],
-['lavrys',6],
-['yes',6],
-['council',6],
-['penultsquire',6],
-['know',6],
-['need',6],
-['would',6],
-['mccreery',6],
-['ianjamesyoung',6],
-['thefixisinyvr',6],
-['vancouverunited',6],
-['amoraexcyna',5],
-['yvrhousing',5],
-['bill',5],
-['vancouver',5],
-['douglastodd',5],
-['us',5],
+
+
+    var wordFreqData =[
+    ['god',72],
+['bless',48],
+['government',40],
+['blessings',32],
+['ping',32],
+['shalom',32],
+['vancouver',32],
+['Canada',26],
+['lord',26],
+['businesses',24],
+['canadian',24],
+['certainly',24],
+['chan',24],
+['liberals',24],
+['please',24],
+['vote',24],
+['drpingchan',16],
+['dtes',16],
+['ericedm',16],
+['ronpolly',147]
+
 
 
 
@@ -216,7 +191,7 @@
     var options = eval({
             "list": wordFreqData,//或者[['各位观众',45],['词云', 21],['来啦!!!',13]],只要格式满足这样都可以
             "gridSize": 6, // 密集程度 数字越小越密集
-            "weightFactor": 3, // 字体大小=原始大小*weightFactor
+            "weightFactor": 1, // 字体大小=原始大小*weightFactor
             "maxFontSize": 200, //最大字号
             "minFontSize": 14, //最小字号
             "fontWeight": 'normal', //字体粗细

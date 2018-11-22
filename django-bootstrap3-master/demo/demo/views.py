@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.core.files.storage import default_storage
-
+from django.shortcuts import render
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db.models.fields.files import FieldFile
 from django.views.generic import FormView
 from django.views.generic.base import TemplateView
 from django.contrib import messages
 
-from .forms import ContactForm, FilesForm, ContactFormSet
 from pyecharts import Bar
 from django_echarts.views.backend import EChartsBackendView
 
@@ -29,45 +28,7 @@ class HomePageView(TemplateView):
         return context
 
 
-class DefaultFormsetView(FormView):
-    template_name = "demo/formset.html"
-    form_class = ContactFormSet
 
-class DefaultTopicsView(FormView):
-    template_name = "demo/topics.html"
-    form_class = ContactFormSet
-
-class DefaultFormView(FormView):
-    template_name = "demo/form.html"
-    form_class = ContactForm
-
-
-class DefaultFormByFieldView(FormView):
-    template_name = "demo/form_by_field.html"
-    form_class = ContactForm
-
-
-class FormHorizontalView(FormView):
-    template_name = "demo/form_horizontal.html"
-    form_class = ContactForm
-
-
-class FormInlineView(FormView):
-    template_name = "demo/form_inline.html"
-    form_class = ContactForm
-
-
-class FormWithFilesView(FormView):
-    template_name = "demo/form_with_files.html"
-    form_class = FilesForm
-
-    def get_context_data(self, **kwargs):
-        context = super(FormWithFilesView, self).get_context_data(**kwargs)
-        context["layout"] = self.request.GET.get("layout", "vertical")
-        return context
-
-    def get_initial(self):
-        return {"file4": fieldfile}
 
 
 class PaginationView(TemplateView):
@@ -90,14 +51,95 @@ class PaginationView(TemplateView):
             show_lines = paginator.page(paginator.num_pages)
         context["lines"] = show_lines
         return context
-
+        
+        
 class BackendEChartsTemplate(EChartsBackendView): 
     template_name = 'demo/backend_charts.html'
-
     def get_echarts_instance(self, *args, **kwargs):
-        bar = Bar("我的第一个图表", "这里是副标题")
-        bar.add("服装", ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"], [5, 20, 36, 10, 75, 90])
-        return bar
+        
+        return
+class MaynardTemplate(EChartsBackendView): 
+    template_name = 'demo/Maynard.html'
+    def get_echarts_instance(self, *args, **kwargs):
+        
+        return
+class HectorTemplate(EChartsBackendView): 
+    template_name = 'demo/Hector.html'
+    def get_echarts_instance(self, *args, **kwargs):
+        
+        return
+class GolokTemplate(EChartsBackendView): 
+    template_name = 'demo/Golok.html'
+    def get_echarts_instance(self, *args, **kwargs):
+        
+        return
+    
+class PingTemplate(EChartsBackendView): 
+    template_name = 'demo/Ping.html'
+    def get_echarts_instance(self, *args, **kwargs):
+        
+        return
+class DavidTemplate(EChartsBackendView): 
+    template_name = 'demo/David.html'
+    def get_echarts_instance(self, *args, **kwargs):
+        
+        return    
+class MikeTemplate(EChartsBackendView): 
+    template_name = 'demo/Mike.html'
+    def get_echarts_instance(self, *args, **kwargs):
+        
+        return
+class FredTemplate(EChartsBackendView): 
+    template_name = 'demo/Fred.html'
+    def get_echarts_instance(self, *args, **kwargs):
+        
+        return
+class AngelaTemplate(EChartsBackendView): 
+    template_name = 'demo/Angela.html'
+    def get_echarts_instance(self, *args, **kwargs):
+        
+        return
+class SatieTemplate(EChartsBackendView): 
+    template_name = 'demo/Satie.html'
+    def get_echarts_instance(self, *args, **kwargs):
+        
+        return
+class KenTemplate(EChartsBackendView): 
+    template_name = 'demo/Ken.html'
+    def get_echarts_instance(self, *args, **kwargs):
+        
+        return
+class KennyTemplate(EChartsBackendView): 
+    template_name = 'demo/Kenny.html'
+    def get_echarts_instance(self, *args, **kwargs):
+        
+        return
+class ShaunaTemplate(EChartsBackendView): 
+    template_name = 'demo/Shauna.html'
+    def get_echarts_instance(self, *args, **kwargs):
+        
+        return
+class JohnTemplate(EChartsBackendView): 
+    template_name = 'demo/John.html'
+    def get_echarts_instance(self, *args, **kwargs):
+        
+        return
+class WaiTemplate(EChartsBackendView): 
+    template_name = 'demo/Wai.html'
+    def get_echarts_instance(self, *args, **kwargs):
+        
+        return
 
-class MiscView(TemplateView):
-    template_name = "demo/misc.html"
+
+
+
+
+
+
+
+
+class DefaultTopicsView(EChartsBackendView):
+    template_name = "demo/topics.html"
+    def get_echarts_instance(self, *args, **kwargs):
+        
+        return

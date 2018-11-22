@@ -13,20 +13,21 @@
         <div class="panel panel-default">
             <div class="panel-body">
                     <ul class="nav nav-stacked">
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Maynard Aubichon</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Hector Bremner</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Golok Z Buday</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Ping Chan</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">David Chen</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Mike Hansen</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Fred Harding</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Angela Dawson</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Satie Shottha</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Ken Sim</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Kenny Stewart</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Shauna Sylvester</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">John Yano</a></li>
-                            <li role="presentation"><a href="{% url 'backend_charts' %}">Wai Young</a></li>    
+                            <li role="presentation"><a href="{% url 'backend_charts' %}">HOME</a></li>   
+                            <li role="presentation"><a href="{% url 'Maynard' %}">Maynard Aubichon</a></li>
+                            <li role="presentation"><a href="{% url 'Hector' %}">Hector Bremner</a></li>
+                            <li role="presentation"><a href="{% url 'Golok' %}">Golok Z Buday</a></li>
+                            <li role="presentation"><a href="{% url 'Ping' %}">Ping Chan</a></li>
+                            <li role="presentation"><a href="{% url 'David' %}">David Chen</a></li>
+                            <li role="presentation"><a href="{% url 'Mike' %}">Mike Hansen</a></li>
+                            <li role="presentation"><a href="{% url 'Fred' %}">Fred Harding</a></li>
+                            <li role="presentation"><a href="{% url 'Angel' %}">Angela Dawson</a></li>
+                            <li role="presentation"><a href="{% url 'Satie' %}">Satie Shottha</a></li>
+                            <li role="presentation"><a href="{% url 'Ken' %}">Ken Sim</a></li>
+                            <li role="presentation"><a href="{% url 'Kenny' %}">Kenny Stewart</a></li>
+                            <li role="presentation"><a href="{% url 'Shauna' %}">Shauna Sylvester</a></li>
+                            <li role="presentation"><a href="{% url 'John' %}">John Yano</a></li>
+                            <li role="presentation"><a href="{% url 'Wai' %}">Wai Young</a></li>    
 
                     </ul>
             </div>
@@ -45,11 +46,11 @@
 
                             <div class="panel-body">
                                 <div class="col-md-3">
-                                    <img src="../../static/demo/bremner-hector-mayor-candidate-2018.png"  alt="bremner-hector-mayor-candidate-2018" />
+                                    <img src="../../static/demo/harding-fred-mayor-candidate.png"  alt="bremner-hector-mayor-candidate-2018" />
                                 </div>
                                 <div class="col-md-5">
-                                        <h1>Angela Dawson </h1> 
-                                        <h3>Twitter</h3>
+                                        <h1>Fred Harding </h1> 
+                                        <h3>Twitter@ Realfredharding</h3>
                                 </div>
                                  
                             </div>
@@ -108,7 +109,7 @@
     
     
         
-    
+        
 
     
     <script type="text/javascript">
@@ -122,14 +123,10 @@
         trigger: 'item',
         formatter: "{a} <br/>{b}: {c} ({d}%)"
     },
-    legend: {
-        orient: 'vertical',
-        x: 'left',
-        data:['A','B','C','D','E']
-    },
+    
     series: [
         {
-            name:'SRC',
+            name:'Fred',
             type:'pie',
             radius: ['50%', '70%'],
             avoidLabelOverlap: false,
@@ -141,7 +138,7 @@
                 emphasis: {
                     show: true,
                     textStyle: {
-                        fontSize: '30',
+                        fontSize: '20',
                         fontWeight: 'bold'
                     }
                 }
@@ -152,16 +149,18 @@
                 }
             },
             data:[
-                {value:335, name:'A'},
-                {value:310, name:'B'},
-                {value:234, name:'C'},
-                {value:135, name:'D'},
-                {value:1548, name:'E'}
+                
+            {value:335, name:'Affordable Housing'},
+{value:3, name:'Transportation'},
+{value:1, name:'Others'},
+
             ]
         }
     ]
 };
-    var wordFreqData = [
+
+
+    var wordFreqData =[
 ['provancouverhq',40],
 ['mtnbvan',32],
 ['vanpoli',28],
